@@ -4,6 +4,9 @@
  */
 package com.atomev8.form;
 
+import com.atomev8.component.Item_Person;
+import net.miginfocom.swing.MigLayout;
+
 /**
  *
  * @author CP-20MAB
@@ -19,7 +22,14 @@ public class Menu_Left extends javax.swing.JPanel {
     }
     
     private void init(){
-        //menuList.setLayout(new MigLayout());
+        menuList.setLayout(new MigLayout("fillx", "0[]0", "0[]0"));
+        showUsers();
+    }
+    
+    private void showUsers(){
+        for(int i = 0; i < 8; i++){
+            menuList.add(new Item_Person("Person " + i), "wrap");
+        }
     }
 
     /**
@@ -38,8 +48,11 @@ public class Menu_Left extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(249, 249, 249));
 
+        menu.setBackground(new java.awt.Color(229, 229, 229));
+        menu.setOpaque(true);
         menu.setLayout(new javax.swing.BoxLayout(menu, javax.swing.BoxLayout.LINE_AXIS));
 
+        menuButton1.setBackground(new java.awt.Color(229, 229, 229));
         menuButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/atomev8/icon/chat_slct.png"))); // NOI18N
         menuButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -48,6 +61,7 @@ public class Menu_Left extends javax.swing.JPanel {
         });
         menu.add(menuButton1);
 
+        menuButton2.setBackground(new java.awt.Color(229, 229, 229));
         menuButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/atomev8/icon/groups_unslct.png"))); // NOI18N
         menuButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

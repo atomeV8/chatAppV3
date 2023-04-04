@@ -13,8 +13,9 @@ public class Item_Person extends javax.swing.JPanel {
     /**
      * Creates new form Item_Person
      */
-    public Item_Person() {
+    public Item_Person(String name) {
         initComponents();
+        userName.setText(name);
     }
 
     /**
@@ -26,21 +27,40 @@ public class Item_Person extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setBackground(new java.awt.Color(229, 229, 229));
+        imageAvatar1 = new com.atomev8.swing.ImageAvatar();
+        userName = new javax.swing.JLabel();
+
+        setBackground(new java.awt.Color(249, 249, 249));
+
+        imageAvatar1.setBorderSize(0);
+        imageAvatar1.setImage(new javax.swing.ImageIcon(getClass().getResource("/com/atomev8/icon/profile.png"))); // NOI18N
+
+        userName.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        userName.setText("User");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(imageAvatar1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(userName, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 56, Short.MAX_VALUE)
+            .addComponent(imageAvatar1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(userName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private com.atomev8.swing.ImageAvatar imageAvatar1;
+    private javax.swing.JLabel userName;
     // End of variables declaration//GEN-END:variables
 }
