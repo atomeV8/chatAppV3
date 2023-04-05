@@ -5,6 +5,7 @@
 package com.atomev8.component;
 
 import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -32,6 +33,7 @@ public class ChatItem extends javax.swing.JLayeredPane {
         layer.setLayout(new FlowLayout(FlowLayout.LEFT, 2, 2));
         layer.setBorder(new EmptyBorder(10, 10, 0, 10));
         JButton btn = new JButton(user);
+        btn.setCursor(new Cursor(Cursor.HAND_CURSOR));
         btn.setBorder(null);
         btn.setContentAreaFilled(false);
         btn.setFocusable(false);

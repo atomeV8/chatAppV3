@@ -4,7 +4,7 @@
  */
 package com.atomev8.form;
 
-import com.atomev8.component.Item_Person;
+import com.atomev8.component.ItemPerson;
 import com.atomev8.swing.ScrollBar;
 import net.miginfocom.swing.MigLayout;
 
@@ -31,7 +31,7 @@ public class Menu_Left extends javax.swing.JPanel {
     private void showPrivateMessages() {
         menuList.removeAll();
         for (int i = 0; i < 20; i++) {
-            menuList.add(new Item_Person("Person " + i), "wrap");
+            menuList.add(new ItemPerson("Person " + i), "wrap");
         }
         refreshList();
     }
@@ -39,7 +39,7 @@ public class Menu_Left extends javax.swing.JPanel {
     private void showGroupMessages() {
         menuList.removeAll();
         for (int i = 0; i < 10; i++) {
-            menuList.add(new Item_Person("Group " + i), "wrap");
+            menuList.add(new ItemPerson("Group " + i), "wrap");
         }
         refreshList();
     }

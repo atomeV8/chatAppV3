@@ -12,12 +12,12 @@ import java.awt.event.MouseEvent;
  *
  * @author CP-20MAB
  */
-public class Item_Person extends javax.swing.JPanel {
+public class ItemPerson extends javax.swing.JPanel {
 
     /**
      * Creates new form Item_Person
      */
-    public Item_Person(String name) {
+    public ItemPerson(String name) {
         initComponents();
         userName.setText(name);
         init();

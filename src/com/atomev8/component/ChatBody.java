@@ -7,6 +7,16 @@ public class ChatBody extends javax.swing.JPanel {
     public ChatBody() {
         initComponents();
         init();
+        addDateSeparation("2 avril 2023");
+        addItemRight("ghuoeahguioe agie gaeub");
+        addItemLeft("gwr gegeg3 g4rgt 45 hz4ew4hj4rhj4 r", "Frank");
+        addDateSeparation("3 avril 2023");
+        addItemRight("ghuoeahguioe agie gaeub");
+        addItemLeft("gwr gegeg3 g4rgt 45 hz4ew4hj4rhj4 r", "Frank");
+        addDateSeparation("4 avril 2023");
+        addItemRight("ghuoeahguioe agie gaeub");
+        addItemLeft("gwr gegeg3 g4rgt 45 hz4ew4hj4rhj4 r", "Frank");
+        addDateSeparation("5 avril 2023");
         addItemRight("ghuoeahguioe agie gaeub");
         addItemLeft("gwr gegeg3 g4rgt 45 hz4ew4hj4rhj4 r", "Frank");
     }
@@ -21,14 +31,24 @@ public class ChatBody extends javax.swing.JPanel {
         item.setText(text);
         item.setUserProfile(user);
         body.add(item, "wrap, w ::75%");
-        body.repaint();
-        body.revalidate();
+        updateBody();
     }
     
     public void addItemRight(String text){
         ChatRight item = new ChatRight();
         item.setText(text);
         body.add(item, "wrap, al right, w :: 75%");
+        updateBody();
+    }
+    
+    public void addDateSeparation(String date){
+        ChatDate d = new ChatDate();
+        d.setDate(date);
+        body.add(d, "wrap, al center");
+        updateBody();
+    }
+    
+    private void updateBody(){
         body.repaint();
         body.revalidate();
     }

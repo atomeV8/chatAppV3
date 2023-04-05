@@ -4,6 +4,10 @@
  */
 package com.atomev8.component;
 
+import com.atomev8.swing.JIMSendTextPane;
+import javax.swing.JScrollPane;
+import net.miginfocom.swing.MigLayout;
+
 /**
  *
  * @author CP-20MAB
@@ -15,6 +19,15 @@ public class ChatBottom extends javax.swing.JPanel {
      */
     public ChatBottom() {
         initComponents();
+        init();
+    }
+    
+    public void init(){
+        setLayout(new MigLayout("fillx, filly", "", ""));
+        JScrollPane scroll = new JScrollPane();
+        JIMSendTextPane txt = new JIMSendTextPane();
+        scroll.setViewportView(txt);
+        add(scroll, "w 100%");
     }
 
     /**
