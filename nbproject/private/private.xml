@@ -3,11 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/cp-20mab/Java/chatAppV3/src/com/atomev8/component/ChatItem.java</file>
-            <file>file:/C:/Users/cp-20mab/Java/chatAppV3/src/com/atomev8/swing/PictureBox.java</file>
-            <file>file:/C:/Users/cp-20mab/Java/chatAppV3/src/com/atomev8/swing/ImageAvatar.java</file>
-            <file>file:/C:/Users/cp-20mab/Java/chatAppV3/test/testing/Main.java</file>
+            <file>file:/C:/Users/cp-20mab/Java/chatAppV3/src/com/atomve8/event/EventImageView.java</file>
+            <file>file:/C:/Users/cp-20mab/Java/chatAppV3/src/com/atomev8/form/ViewImage.java</file>
             <file>file:/C:/Users/cp-20mab/Java/chatAppV3/src/com/atomev8/component/ChatImage.java</file>
+            <file>file:/C:/Users/cp-20mab/Java/chatAppV3/src/com/atomve8/event/PublicEvent.java</file>
+            <file>file:/C:/Users/cp-20mab/Java/chatAppV3/src/com/atomev8/main/Main.java</file>
         </group>
     </open-files>
 </project-private>
