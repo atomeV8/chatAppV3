@@ -11,8 +11,18 @@ public class ChatLeftWithPFP extends javax.swing.JLayeredPane {
     }
     
     public void setText(String text){
-        this.text.setText(text);
-        this.text.setTime("10:31 PM");
+        if(text.equals((""))){
+            this.text.hideText();
+        }else
+            this.text.setText(text);
+    }
+    
+    public void setImage(Icon ...image){
+        text.setImage(false, image);
+    }
+    
+    public void setTime(){
+        text.setTime("10:30 PM");
     }
     
     public void setUserProfile(String user){

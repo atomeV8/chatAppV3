@@ -5,6 +5,7 @@
 package com.atomev8.component;
 
 import java.awt.Color;
+import javax.swing.Icon;
 
 /**
  *
@@ -21,8 +22,19 @@ public class ChatRight extends javax.swing.JLayeredPane {
     }
 
     public void setText(String text) {
-        this.text.setText(text);
-        this.text.setTime("10:30 PM");
+        if(text.equals("")){
+            this.text.hideText();
+        }else
+            this.text.setText(text);
+        this.text.seen();
+    }
+    
+    public void setImage(Icon ...image){
+        text.setImage(true, image);
+    }
+    
+    public void setTime(){
+        text.setTime("10:30 PM");
     }
 
     /**

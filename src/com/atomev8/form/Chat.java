@@ -15,6 +15,12 @@ public class Chat extends javax.swing.JPanel {
      */
     public Chat() {
         initComponents();
+        init();
+    }
+    
+    private void init(){
+        //Chat_Title chatTitle = new Chat_Title();
+        //Chat_Body chatBody = new Chat_Body();
     }
 
     /**
