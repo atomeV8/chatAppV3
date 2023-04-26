@@ -21,6 +21,14 @@ public class ChatLeftWithPFP extends javax.swing.JLayeredPane {
         text.setImage(false, image);
     }
     
+    public void setImage(String ...image){
+        text.setImage(false, image);
+    }
+    
+    public void setFile(String fileName, String fileSize){
+        text.setFile(fileName, fileSize);
+    }
+    
     public void setTime(){
         text.setTime("10:30 PM");
     }

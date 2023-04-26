@@ -59,14 +59,36 @@ public class ChatItem extends javax.swing.JLayeredPane {
         layer.add(label);
         add(layer);
     }
-    
-    public void setImage(boolean right, Icon... image){
+
+    public void setImage(boolean right, Icon... image) {
+        if (image.length > 0) {
+            JLayeredPane layer = new JLayeredPane();
+            layer.setLayout(new FlowLayout(right ? FlowLayout.RIGHT : FlowLayout.LEFT));
+            layer.setBorder(new EmptyBorder(0, 5, 0, 5));
+            ChatImage chatImage = new ChatImage(right);
+            chatImage.addImage(image);
+            layer.add(chatImage);
+            add(layer);
+        }
+    }
+
+    public void setImage(boolean right, String... image) {
         JLayeredPane layer = new JLayeredPane();
-        layer.setLayout(new FlowLayout(right?FlowLayout.RIGHT:FlowLayout.LEFT));
+        layer.setLayout(new FlowLayout(right ? FlowLayout.RIGHT : FlowLayout.LEFT));
         layer.setBorder(new EmptyBorder(0, 5, 0, 5));
         ChatImage chatImage = new ChatImage(right);
         chatImage.addImage(image);
         layer.add(chatImage);
+        add(layer);
+    }
+
+    public void setFile(String fileName, String fileSize) {
+        JLayeredPane layer = new JLayeredPane();
+        layer.setLayout(new FlowLayout(FlowLayout.LEFT));
+        layer.setBorder(new EmptyBorder(0, 5, 0, 5));
+        ChatFile file = new ChatFile();
+        file.setFile(fileName, fileSize);
+        layer.add(file);
         add(layer);
     }
 
@@ -81,8 +103,8 @@ public class ChatItem extends javax.swing.JLayeredPane {
             label.setIcon(new ImageIcon(getClass().getResource("/com/atomev8/icon/double_tick.png")));
         }
     }
-    
-    public void hideText(){
+
+    public void hideText() {
         text.setVisible(false);
     }
 
@@ -94,6 +116,7 @@ public class ChatItem extends javax.swing.JLayeredPane {
 
         setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.PAGE_AXIS));
 
+        text.setBackground(null);
         text.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 5, 10));
         text.setSelectionColor(new java.awt.Color(73, 167, 255));
         add(text);

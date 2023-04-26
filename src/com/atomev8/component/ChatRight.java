@@ -30,7 +30,15 @@ public class ChatRight extends javax.swing.JLayeredPane {
     }
     
     public void setImage(Icon ...image){
-        text.setImage(true, image);
+        text.setImage(false, image);
+    }
+    
+    public void setImage(String ...image){
+        text.setImage(false, image);
+    }
+    
+    public void setFile(String fileName, String fileSize){
+        text.setFile(fileName, fileSize);
     }
     
     public void setTime(){

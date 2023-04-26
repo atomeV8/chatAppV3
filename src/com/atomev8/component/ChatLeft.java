@@ -5,6 +5,7 @@
 package com.atomev8.component;
 
 import java.awt.Color;
+import javax.swing.Icon;
 
 /**
  *
@@ -21,8 +22,26 @@ public class ChatLeft extends javax.swing.JLayeredPane {
     }
     
     public void setText(String text){
-        this.text.setText(text);
-        this.text.setTime("10:31 PM");
+        if(text.equals((""))){
+            this.text.hideText();
+        }else
+            this.text.setText(text);
+    }
+    
+    public void setImage(Icon ...image){
+        text.setImage(false, image);
+    }
+    
+    public void setImage(String ...image){
+        text.setImage(false, image);
+    }
+    
+    public void setFile(String fileName, String fileSize){
+        text.setFile(fileName, fileSize);
+    }
+    
+    public void setTime(){
+        text.setTime("10:30 PM");
     }
 
     /**

@@ -41,6 +41,16 @@ public class ChatImage extends javax.swing.JLayeredPane {
         }
     }
     
+    public void addImage(String ...images){
+        for(String image :images){
+            ImageItem pic = new ImageItem();
+            pic.setPreferredSize(new Dimension(200,200));
+            pic.setImage(image);
+            //addEvent(pic, image);
+            add(pic, "wrap");
+        }
+    }
+    
     private void addEvent(Component comp, Icon image){
         comp.setCursor(new Cursor(Cursor.HAND_CURSOR) {
         });
@@ -55,6 +65,12 @@ public class ChatImage extends javax.swing.JLayeredPane {
     }
     
     private Dimension getAutoSize(Icon image, int w, int h) {
+        if(w>image.getIconWidth()){
+            w = image.getIconWidth();
+        }
+        if(h>image.getIconHeight()){
+            h = image.getIconHeight();
+        }
         int iw = image.getIconWidth();
         int ih = image.getIconHeight();
         double xScale = (double) w / iw;
