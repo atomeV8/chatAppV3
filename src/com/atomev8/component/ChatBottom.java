@@ -2,7 +2,7 @@ package com.atomev8.component;
 
 import com.atomev8.swing.JIMSendTextPane;
 import com.atomev8.swing.ScrollBar;
-import com.atomve8.event.PublicEvent;
+import com.atomev8.event.PublicEvent;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Dimension;

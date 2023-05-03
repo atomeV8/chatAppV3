@@ -3,8 +3,8 @@ package com.atomev8.form;
 import com.atomev8.component.ChatBody;
 import com.atomev8.component.ChatBottom;
 import com.atomev8.component.ChatTitle;
-import com.atomve8.event.EventChat;
-import com.atomve8.event.PublicEvent;
+import com.atomev8.event.EventChat;
+import com.atomev8.event.PublicEvent;
 import net.miginfocom.swing.MigLayout;
 
 public class Chat extends javax.swing.JPanel {

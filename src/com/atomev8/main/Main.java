@@ -5,8 +5,9 @@
 package com.atomev8.main;
 
 import com.atomev8.swing.ComponentResizer;
-import com.atomve8.event.EventImageView;
-import com.atomve8.event.PublicEvent;
+import com.atomev8.event.EventImageView;
+import com.atomev8.event.PublicEvent;
+import com.formdev.flatlaf.intellijthemes.FlatArcIJTheme;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import javax.swing.Icon;
@@ -65,6 +66,7 @@ public class Main extends javax.swing.JFrame {
         border = new javax.swing.JPanel();
         background = new javax.swing.JPanel();
         body = new javax.swing.JLayeredPane();
+        loading = new com.atomev8.form.Loading();
         login = new com.atomev8.form.Login();
         home1 = new com.atomev8.form.Home();
         imagePreview = new com.atomev8.form.ViewImage();
@@ -80,6 +82,7 @@ public class Main extends javax.swing.JFrame {
         background.setBackground(new java.awt.Color(255, 255, 255));
 
         body.setLayout(new java.awt.CardLayout());
+        body.add(loading, "card5");
         body.add(login, "card4");
         body.add(home1, "card2");
         body.setLayer(imagePreview, javax.swing.JLayeredPane.POPUP_LAYER);
@@ -91,14 +94,14 @@ public class Main extends javax.swing.JFrame {
             backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(body, javax.swing.GroupLayout.DEFAULT_SIZE, 1110, Short.MAX_VALUE)
+                .addComponent(body, javax.swing.GroupLayout.DEFAULT_SIZE, 925, Short.MAX_VALUE)
                 .addContainerGap())
         );
         backgroundLayout.setVerticalGroup(
             backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(body, javax.swing.GroupLayout.DEFAULT_SIZE, 521, Short.MAX_VALUE)
+                .addComponent(body, javax.swing.GroupLayout.PREFERRED_SIZE, 521, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -216,35 +219,10 @@ public class Main extends javax.swing.JFrame {
         this.setState(JFrame.ICONIFIED);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
+        FlatArcIJTheme.setup();
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new Main().setVisible(true);
             }
@@ -259,6 +237,7 @@ public class Main extends javax.swing.JFrame {
     private com.atomev8.form.ViewImage imagePreview;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private com.atomev8.form.Loading loading;
     private com.atomev8.form.Login login;
     private javax.swing.JPanel title;
     // End of variables declaration//GEN-END:variables

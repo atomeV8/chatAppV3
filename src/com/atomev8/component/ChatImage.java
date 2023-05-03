@@ -5,7 +5,7 @@
 package com.atomev8.component;
 
 import com.atomev8.swing.PictureBox;
-import com.atomve8.event.PublicEvent;
+import com.atomev8.event.PublicEvent;
 import java.awt.Component;
 import java.awt.Cursor;
 import java.awt.Dimension;
