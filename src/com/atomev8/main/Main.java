@@ -56,8 +56,8 @@ public class Main extends javax.swing.JFrame {
         border = new javax.swing.JPanel();
         background = new javax.swing.JPanel();
         body = new javax.swing.JLayeredPane();
-        login = new com.atomev8.form.Login();
         loading = new com.atomev8.form.Loading();
+        login = new com.atomev8.form.Login();
         imagePreview = new com.atomev8.form.ViewImage();
         home1 = new com.atomev8.form.Home();
         title = new javax.swing.JPanel();
@@ -72,8 +72,8 @@ public class Main extends javax.swing.JFrame {
         background.setBackground(new java.awt.Color(255, 255, 255));
 
         body.setLayout(new java.awt.CardLayout());
-        body.add(login, "card4");
         body.add(loading, "card5");
+        body.add(login, "card4");
         body.setLayer(imagePreview, javax.swing.JLayeredPane.POPUP_LAYER);
         body.add(imagePreview, "card3");
         body.add(home1, "card2");
