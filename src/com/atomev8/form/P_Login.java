@@ -111,7 +111,13 @@ public class P_Login extends javax.swing.JPanel {
     }//GEN-LAST:event_btnRegisterActionPerformed
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        PublicEvent.getInstance().getEventLogin().login();
+        PublicEvent.getInstance().getEventMain().showLoading(true);
+        try {
+            Thread.sleep(300);
+            PublicEvent.getInstance().getEventLogin().login();
+            PublicEvent.getInstance().getEventMain().initChat();
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_btnLoginActionPerformed
 
 

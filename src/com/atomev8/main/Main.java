@@ -6,6 +6,7 @@ package com.atomev8.main;
 
 import com.atomev8.swing.ComponentResizer;
 import com.atomev8.event.EventImageView;
+import com.atomev8.event.EventMain;
 import com.atomev8.event.PublicEvent;
 import com.formdev.flatlaf.intellijthemes.FlatArcIJTheme;
 import java.awt.Dimension;
@@ -32,10 +33,22 @@ public class Main extends javax.swing.JFrame {
         loading.setVisible(false);
         imagePreview.setVisible(false);
         body.setVisible(false);
+        repaint();
         initEvents();
     }
     
     private void initEvents(){
+        PublicEvent.getInstance().addEventMain(new EventMain() {
+            @Override
+            public void showLoading(boolean show) {
+                loading.setVisible(show);
+            }
+
+            @Override
+            public void initChat() {
+                home.setVisible(true);
+            }
+        });
         PublicEvent.getInstance().addEventImageView(new EventImageView(){
             @Override
             public void viewImage(Icon image){
@@ -55,14 +68,14 @@ public class Main extends javax.swing.JFrame {
 
         border = new javax.swing.JPanel();
         background = new javax.swing.JPanel();
+        title = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         body = new javax.swing.JLayeredPane();
         loading = new com.atomev8.form.Loading();
         login = new com.atomev8.form.Login();
         imagePreview = new com.atomev8.form.ViewImage();
-        home1 = new com.atomev8.form.Home();
-        title = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        home = new com.atomev8.form.Home();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -70,30 +83,6 @@ public class Main extends javax.swing.JFrame {
         border.setBackground(new java.awt.Color(229, 229, 229));
 
         background.setBackground(new java.awt.Color(255, 255, 255));
-
-        body.setLayout(new java.awt.CardLayout());
-        body.add(loading, "card5");
-        body.add(login, "card4");
-        body.setLayer(imagePreview, javax.swing.JLayeredPane.POPUP_LAYER);
-        body.add(imagePreview, "card3");
-        body.add(home1, "card2");
-
-        javax.swing.GroupLayout backgroundLayout = new javax.swing.GroupLayout(background);
-        background.setLayout(backgroundLayout);
-        backgroundLayout.setHorizontalGroup(
-            backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(body, javax.swing.GroupLayout.DEFAULT_SIZE, 925, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        backgroundLayout.setVerticalGroup(
-            backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(body, javax.swing.GroupLayout.PREFERRED_SIZE, 521, Short.MAX_VALUE)
-                .addContainerGap())
-        );
 
         title.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
@@ -138,7 +127,7 @@ public class Main extends javax.swing.JFrame {
         titleLayout.setHorizontalGroup(
             titleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(titleLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(888, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -150,21 +139,52 @@ public class Main extends javax.swing.JFrame {
             .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        body.setLayout(new java.awt.CardLayout());
+        body.add(loading, "card5");
+        body.add(login, "card4");
+        body.setLayer(imagePreview, javax.swing.JLayeredPane.POPUP_LAYER);
+        body.add(imagePreview, "card3");
+        body.add(home, "card2");
+
+        javax.swing.GroupLayout backgroundLayout = new javax.swing.GroupLayout(background);
+        background.setLayout(backgroundLayout);
+        backgroundLayout.setHorizontalGroup(
+            backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(backgroundLayout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addComponent(title, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
+            .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(backgroundLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(body, javax.swing.GroupLayout.DEFAULT_SIZE, 925, Short.MAX_VALUE)
+                    .addContainerGap()))
+        );
+        backgroundLayout.setVerticalGroup(
+            backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(backgroundLayout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(612, Short.MAX_VALUE))
+            .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(backgroundLayout.createSequentialGroup()
+                    .addGap(87, 87, 87)
+                    .addComponent(body, javax.swing.GroupLayout.PREFERRED_SIZE, 456, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(87, Short.MAX_VALUE)))
+        );
+
         javax.swing.GroupLayout borderLayout = new javax.swing.GroupLayout(border);
         border.setLayout(borderLayout);
         borderLayout.setHorizontalGroup(
             borderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, borderLayout.createSequentialGroup()
-                .addGroup(borderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(title, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(1, 1, 1))
         );
         borderLayout.setVerticalGroup(
             borderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(borderLayout.createSequentialGroup()
-                .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1, 1, 1)
+                .addGap(0, 0, 0)
                 .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(1, 1, 1))
         );
@@ -223,7 +243,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel background;
     private javax.swing.JLayeredPane body;
     private javax.swing.JPanel border;
-    private com.atomev8.form.Home home1;
+    private com.atomev8.form.Home home;
     private com.atomev8.form.ViewImage imagePreview;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
